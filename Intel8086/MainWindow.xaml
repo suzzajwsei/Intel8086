@@ -1,0 +1,99 @@
+﻿<Window x:Class="Intel8086.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Intel8086"
+        mc:Ignorable="d"
+        Title="PROJECT: Intel8086" Height="450" Width="600">
+    <Grid Background="#ffb8e5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="11*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="189*"/>
+            <RowDefinition Height="191*"/>
+            <RowDefinition Height="54*"/>
+
+        </Grid.RowDefinitions>
+        <Label Content="AX" HorizontalAlignment="Left" Margin="1,24.667,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" RenderTransformOrigin="-0.581,-0.588" Foreground="#454141" Height="34" Width="34" Grid.Column="0" Grid.Row="1"/>
+        <Label Content="BX" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" RenderTransformOrigin="-0.581,-0.588" Foreground="#454141" Height="34" Width="33" Grid.Column="0" Margin="2,64.667,0,0" Grid.Row="1"/>
+        <Label Content="CX" HorizontalAlignment="Left" Margin="1,106.667,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" RenderTransformOrigin="-0.581,-0.588" Foreground="#454141" Height="34" Width="33" Grid.Column="0" Grid.Row="1"/>
+        <Label Content="DX" HorizontalAlignment="Left" Margin="0,145.667,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" RenderTransformOrigin="-0.581,-0.588" Foreground="#454141" Height="34" Width="35" Grid.Column="0" Grid.Row="1"/>
+        <Label x:Name="ahLabel" Content="H" HorizontalAlignment="Left" Margin="61,2.667,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="10" RenderTransformOrigin="-0.581,-0.588" Grid.Column="0" Foreground="#454141" Height="26" Width="24" Grid.Row="1"/>
+        <TextBox x:Name="ahTextBox" HorizontalAlignment="Left" Margin="48,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Height="34" Grid.Column="0" FontSize="20" FontWeight="Bold" TextAlignment="Center" MaxLength="2" MaxLines="1" CharacterCasing="Upper" TextChanged="TextBchanged" Text="00" Background="#595859" Foreground="White" Grid.Row="1"/>
+        <TextBox x:Name="bhTextBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Height="34" Grid.Column="0" FontSize="20" FontWeight="Bold" TextAlignment="Center" MaxLength="2" MaxLines="1" CharacterCasing="Upper" TextChanged="TextBchanged" Text="00" Background="#595859" Foreground="White" Margin="48,65,0,0" Grid.Row="1"/>
+        <TextBox x:Name="chTextBox" HorizontalAlignment="Left" Margin="48,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Height="34" Grid.Column="0" FontSize="20" FontWeight="Bold" TextAlignment="Center" MaxLength="2" MaxLines="1" CharacterCasing="Upper" TextChanged="TextBchanged" Text="00" Background="#595859" Foreground="White" Grid.Row="1"/>
+        <TextBox x:Name="dhTextBox" HorizontalAlignment="Left" Margin="48,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Height="34" Grid.Column="0" FontSize="20" FontWeight="Bold" TextAlignment="Center" MaxLength="2" MaxLines="1" CharacterCasing="Upper" TextChanged="TextBchanged" Text="00" Background="#595859" Foreground="White" Grid.Row="1"/>
+        <Label Content="L" HorizontalAlignment="Left" Margin="118,2.667,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="10" RenderTransformOrigin="-0.581,-0.588" Grid.Column="0" Foreground="#454141" Height="22" Width="19" Grid.Row="1"/>
+        <TextBox x:Name="alTextBox" Margin="108,24.667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Grid.Column="0" FontSize="20" FontWeight="Bold" TextAlignment="Center" MaxLength="2" MaxLines="1" CharacterCasing="Upper" TextChanged="TextBchanged" Text="00" Background="#595859" Foreground="White" Grid.Row="1"/>
+        <TextBox x:Name="blTextBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Height="34" Grid.Column="0" FontSize="20" FontWeight="Bold" TextAlignment="Center" MaxLength="2" MaxLines="1" CharacterCasing="Upper" TextChanged="TextBchanged" Text="00" Background="#595859" Foreground="White" Margin="108,64.667,0,0" Grid.Row="1"/>
+        <TextBox x:Name="clTextBox"
+                 Background="#595859"
+                 HorizontalAlignment="Left" Margin="108,107.667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Height="34" Grid.Column="0" FontSize="20" FontWeight="Bold" TextAlignment="Center" MaxLength="2" MaxLines="1" CharacterCasing="Upper" TextChanged="TextBchanged" Text="00" Foreground="White" Grid.Row="1"/>
+        <TextBox x:Name="dlTextBox" 
+                 Background="#595859"
+                 HorizontalAlignment="Left" Margin="108,145.667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Height="34" Grid.Column="0" FontSize="20" FontWeight="Bold" TextAlignment="Center" MaxLength="2" MaxLines="1" CharacterCasing="Upper" TextChanged="TextBchanged" Text="00" Foreground="White" Grid.Row="1"/>
+        <Button Content="MOV" Grid.Column="2" Background="Gray" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Height="70" Width="70" Click="MOV" Margin="123,2.667,0,112.667" Grid.Row="1"/>
+        <Button Content="XCHG" Grid.Column="2" Background="Gray" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Height="70" Width="70" Click="XCHNG" Grid.Row="1" Margin="15,2.667,0,112.667"/>
+        <ComboBox x:Name="firstRegister" Grid.Column="1" HorizontalAlignment="Left" Margin="47,35.667,0,0" VerticalAlignment="Top" Width="50" DropDownClosed="Rej1Closed" Height="22" Grid.Row="1">
+            <ComboBoxItem Content="MEMORY"/>
+            <ComboBoxItem Content="AX"/>
+            <ComboBoxItem Content="BX"/>
+            <ComboBoxItem Content="CX"/>
+            <ComboBoxItem Content="DX"/>
+            <ComboBoxItem Content="AH"/>
+            <ComboBoxItem Content="AL"/>
+            <ComboBoxItem Content="BH"/>
+            <ComboBoxItem Content="BL"/>
+            <ComboBoxItem Content="CH"/>
+            <ComboBoxItem Content="CL"/>
+            <ComboBoxItem Content="DH"/>
+            <ComboBoxItem Content="DL"/>
+
+        </ComboBox>
+        <ComboBox x:Name="firstRegister_Copy" Grid.Column="1" HorizontalAlignment="Left" Margin="138,35.667,0,0" VerticalAlignment="Top" Width="50" DropDownClosed="Rej2Closed" Height="22" Grid.Row="1">
+            <ComboBoxItem Content="MEMORY"/>
+            <ComboBoxItem Content="AX"/>
+            <ComboBoxItem Content="BX"/>
+            <ComboBoxItem Content="CX"/>
+            <ComboBoxItem Content="DX"/>
+            <ComboBoxItem Content="AH"/>
+            <ComboBoxItem Content="AL"/>
+            <ComboBoxItem Content="BH"/>
+            <ComboBoxItem Content="BL"/>
+            <ComboBoxItem Content="CH"/>
+            <ComboBoxItem Content="CL"/>
+            <ComboBoxItem Content="DH"/>
+            <ComboBoxItem Content="DL"/>
+
+        </ComboBox>
+        <Label Content="REGISTERS" Grid.Column="1" HorizontalAlignment="Left" Margin="67,2.667,0,0" VerticalAlignment="Top" Width="104" Height="33" Foreground="#454141" FontSize="20" Grid.Row="1"/>
+        <Label Content="SP" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" RenderTransformOrigin="-0.581,-0.588" Grid.Row="0" Foreground="#454141" Height="34" Width="32" Grid.Column="1" Margin="48,75,0,0"/>
+        <Label Content="BP" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" RenderTransformOrigin="-0.581,-0.588" Grid.Row="0" Foreground="#454141" Height="34" Width="32" Grid.Column="1" Margin="48,36,0,0"/>
+        <Label Content="SI" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" RenderTransformOrigin="-0.581,-0.588" Grid.Row="0" Foreground="#454141" Height="34" Width="26" Grid.Column="2" Margin="39,75,0,0"/>
+        <Label Content="DI" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" RenderTransformOrigin="-0.581,-0.588" Grid.Row="0" Foreground="#454141" Height="34" Width="29" Grid.Column="2" Margin="39,36,0,0"/>
+        <TextBox x:Name="spTextBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Height="34" Grid.Column="1" FontSize="20" FontWeight="Bold" TextAlignment="Center" MaxLength="4" MaxLines="1" CharacterCasing="Upper" TextChanged="TextBchanged" Grid.Row="0" Text="0000" Background="#595859" Foreground="#FFF9F1F1" Margin="85,75,0,0"/>
+        <TextBox x:Name="bpTextBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Height="34" Grid.Column="1" FontSize="20" FontWeight="Bold" TextAlignment="Center" MaxLength="4" MaxLines="1" CharacterCasing="Upper" TextChanged="TextBchanged"  Grid.Row="0" Text="0000" Background="#595859" Foreground="#FFFDF9F9" Margin="85,36,0,0"/>
+        <TextBox x:Name="siTextBox" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Height="34" Grid.Column="2" FontSize="20" FontWeight="Bold" TextAlignment="Center" MaxLength="4" MaxLines="1" CharacterCasing="Upper" TextChanged="TextBchanged" Grid.Row="0" Text="0000" Background="#595859" Foreground="White" Margin="40,75,0,0"/>
+        <TextBox x:Name="diTextBox" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Height="34" Grid.Column="2" FontSize="20" FontWeight="Bold" TextAlignment="Center" MaxLength="4" MaxLines="1" CharacterCasing="Upper" TextChanged="TextBchanged" Grid.Row="0" Text="0000" Background="#595859" Foreground="White" Margin="40,36,0,0"/>
+        <Button Content="PUSH" Grid.Column="2" Background="Gray" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Height="70" Width="70" Grid.Row="1" Click="PUSH" Margin="15,94.667,0,20.667"/>
+        <Button Content="POP" Grid.Column="2" Background="Gray" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Height="70" Width="70" Grid.Row="1" Click="POP" Margin="123,94.667,0,20.667"/>
+        <Label Content="ADD:" Grid.Column="1" HorizontalAlignment="Center" Margin="87,59.667,87,0" VerticalAlignment="Top" Width="44" Height="35" FontSize="15" Foreground="#454141" Grid.Row="1"/>
+        <TextBox Foreground="White"
+           x:Name="movTB" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Height="34" Grid.Column="1" FontSize="20" FontWeight="Bold" TextAlignment="Center" MaxLength="10" MaxLines="1" CharacterCasing="Upper" Margin="0,100,0,0" Text="0" Background="#595859" Grid.Row="1"/>
+        <TextBox x:Name="dsTextBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Height="34" Grid.Column="0" FontSize="20" FontWeight="Bold" TextAlignment="Center" MaxLength="2" MaxLines="1" CharacterCasing="Upper" TextChanged="TextBchanged" Margin="46,36,0,0" Text="0000" Background="#595859" Foreground="White"/>
+        <Label Content="DS" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" RenderTransformOrigin="-0.581,-0.588" Grid.Column="0" Margin="10,36,0,0" Foreground="#454141" Height="34" Width="33"/>
+        <CheckBox x:Name="BasedCB" Content="BASE" Grid.Column="0" HorizontalAlignment="Right" Margin="15,124,0,0" VerticalAlignment="Top" Foreground="#454141" Height="15" Width="78"/>
+        <RadioButton x:Name="bpRB" GroupName="Based" Content="BP" Grid.Column="1" HorizontalAlignment="Left" Margin="138,155,0,0" VerticalAlignment="Top" Foreground="#454141" Height="15" Width="33"/>
+        <RadioButton x:Name="bxRB" GroupName="Based" Content="BX" Grid.Column="1" HorizontalAlignment="Left" Margin="48,155,0,0" VerticalAlignment="Top" Foreground="#454141" Height="15" Width="33"/>
+        <CheckBox x:Name="indexedCB" Content="INDEX" Grid.Column="1" HorizontalAlignment="Center" Margin="30,124,0,0" VerticalAlignment="Top" Foreground="#454141" Height="15" Width="78"/>
+        <RadioButton x:Name="siRB" Content="SI" HorizontalAlignment="Left" Margin="118,155,0,0" VerticalAlignment="Top" Foreground="#454141" Height="15" Width="30"/>
+        <RadioButton x:Name="diRB" Content="DI" Grid.Column="2" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Foreground="#454141" Height="15" Width="31"/>
+        <CheckBox x:Name="bindexedCB" Content="BASE-INDEX" Grid.Column="2" HorizontalAlignment="Center" Margin="0,124,0,0" VerticalAlignment="Top" Foreground="#454141" Height="15" Width="136"/>
+        <TextBox x:Name="ssTextBox" TextWrapping="Wrap" VerticalAlignment="Center" Height="34" Grid.Column="0" FontSize="20" FontWeight="Bold" TextAlignment="Center" MaxLength="2" MaxLines="1" CharacterCasing="Upper" TextChanged="TextBchanged" Text="0000" Background="#595859" Foreground="#FFFDF5F5" Margin="46,75,0,74.333"/>
+        <Label Content="SS" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" RenderTransformOrigin="-0.581,-0.588" Grid.Column="0" Margin="10,0,0,0" Foreground="#454141" Height="34" Width="30"/>
+    </Grid>
+</Window>
